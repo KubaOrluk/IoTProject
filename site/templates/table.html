@@ -1,0 +1,29 @@
+{% autoescape false %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <title>Temperatures App</title>
+    </head>
+
+    <body>
+        <div>
+            <table border="1">
+                <tr>
+                  <th>Temperature</th>
+		  <th>Date</th>
+                </tr>
+                {% for i in data%}
+                <tr>
+                    <td>{{ i['temperature'] }}</td>
+		    <td>{{ i['data'] }}</td>
+                </tr>
+                {% endfor %}
+
+              </table>
+        </div>
+    </body>
+</html>
+{% endautoescape %}
